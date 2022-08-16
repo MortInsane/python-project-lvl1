@@ -7,7 +7,7 @@ GAME_CONDITION = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 def even_logic():
     count_success_answer = 0
-    name = welcome_user()
+    name = welcome_user(GAME_CONDITION)
 
     while True:
         if count_success_answer == 3:
