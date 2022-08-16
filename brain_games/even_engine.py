@@ -30,5 +30,6 @@ def even_logic():
             print('Correct!')
         else:
             print(f"'{answer}' is wrong answer ;(."
-                  f"Correct answer was '{success_answer}'")
+                  f"Correct answer was '{success_answer}'\n"
+                  f"Let's try again, {name}")
             return
