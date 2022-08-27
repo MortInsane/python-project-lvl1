@@ -1,4 +1,4 @@
-from brain_games.game_engine import welcome_user, game_checker
+from brain_games.game_engine import run_game
 from random import randint, choice
 
 
@@ -25,26 +25,13 @@ def draw_progression():
 
 
 def progression_logic():
-    count_success_answer = 0
-    name = welcome_user(GAME_CONDITION)
+    question, success_answer = draw_progression()
+    success_answer = str(success_answer)
 
-    while True:
-        if count_success_answer == 3:
-            print(f'Congratulations, {name}!')
-            return
+    question_print = question
 
-        question, success_answer = draw_progression()
-        success_answer = str(success_answer)
+    return success_answer, question_print
 
-        question_print = question
-        attempt = game_checker(question=question_print,
-                               success_answer=success_answer)
 
-        if attempt == 'correct':
-            print('Correct!')
-            count_success_answer += 1
-        else:
-            print(f"'{attempt}' is wrong answer ;(. "
-                  f"Correct answer was '{success_answer}'\n"
-                  f"Let's try again, {name}!")
-            return
+def run_game_progression():
+    run_game(game_condition=GAME_CONDITION, game=progression_logic)
