@@ -1,4 +1,4 @@
-from brain_games.game_engine import welcome_user, game_checker
+from brain_games.game_engine import run_game
 from random import randint
 
 
@@ -6,31 +6,18 @@ GAME_CONDITION = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
 def even_logic():
-    count_success_answer = 0
-    name = welcome_user(GAME_CONDITION)
+    NUMBER = randint(1, 100)
+    yes_answer, no_answer = 'yes', 'no'
 
-    while True:
-        if count_success_answer == 3:
-            print(f'Congratulations, {name}!')
-            return
+    if NUMBER % 2 == 0:
+        success_answer = yes_answer
+    else:
+        success_answer = no_answer
 
-        number = randint(1, 100)
-        yes_answer, no_answer = 'yes', 'no'
+    question_print = str(NUMBER)
 
-        if number % 2 == 0:
-            success_answer = yes_answer
-        else:
-            success_answer = no_answer
+    return success_answer, question_print
 
-        question_print = str(number)
-        attempt = game_checker(question=question_print,
-                               success_answer=success_answer)
 
-        if attempt == 'correct':
-            print('Correct!')
-            count_success_answer += 1
-        else:
-            print(f"'{attempt}' is wrong answer ;(. "
-                  f"Correct answer was '{success_answer}'\n"
-                  f"Let's try again, {name}!")
-            return
+def run_game_even():
+    run_game(game_condition=GAME_CONDITION, game=even_logic)
