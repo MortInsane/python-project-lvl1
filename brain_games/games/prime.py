@@ -1,4 +1,4 @@
-from brain_games.game_engine import welcome_user, game_checker
+from brain_games.game_engine import run_game
 from random import randint
 
 
@@ -13,31 +13,18 @@ def is_prime(a):
 
 
 def prime_logic():
-    count_success_answer = 0
-    name = welcome_user(GAME_CONDITION)
+    NUMBER = randint(2, 100)
+    yes_answer, no_answer = 'yes', 'no'
 
-    while True:
-        if count_success_answer == 3:
-            print(f'Congratulations, {name}!')
-            return
+    if is_prime(NUMBER):
+        success_answer = yes_answer
+    else:
+        success_answer = no_answer
 
-        number = randint(2, 100)
-        yes_answer, no_answer = 'yes', 'no'
+    question_print = str(NUMBER)
 
-        if is_prime(number):
-            success_answer = yes_answer
-        else:
-            success_answer = no_answer
+    return success_answer, question_print
 
-        question_print = str(number)
-        attempt = game_checker(question=question_print,
-                               success_answer=success_answer)
 
-        if attempt == 'correct':
-            print('Correct!')
-            count_success_answer += 1
-        else:
-            print(f"'{attempt}' is wrong answer ;(. "
-                  f"Correct answer was '{success_answer}'\n"
-                  f"Let's try again, {name}!")
-            return
+def run_game_prime():
+    run_game(game_condition=GAME_CONDITION, game=prime_logic)
