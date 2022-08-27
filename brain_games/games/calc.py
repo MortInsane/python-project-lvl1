@@ -2,7 +2,7 @@ from brain_games.game_engine import run_game
 from random import randint, choice
 
 
-GAME_CONDITION = "What is the result of the expression?"
+GAME_CONDITION = 'What is the result of the expression?'
 
 
 def calc_logic():
