@@ -1,15 +1,16 @@
-from brain_games.game_engine import run_game
 from random import randint, choice
 
 
 GAME_CONDITION = 'What is the result of the expression?'
+START = 1
+STOP = 100
+OPERATORS = ['+', '-', '*']
 
 
 def calc_logic():
-    NUMBER1 = randint(1, 100)
-    NUMBER2 = randint(1, 100)
+    NUMBER1 = randint(START, STOP)
+    NUMBER2 = randint(START, STOP)
 
-    OPERATORS = ['+', '-', '*']
     operator = choice(OPERATORS)
 
     success_answer = 0
@@ -21,10 +22,6 @@ def calc_logic():
         success_answer = NUMBER1 * NUMBER2
 
     success_answer = str(success_answer)
-    question_print = f"{NUMBER1} {operator} {NUMBER2}"
+    question_print = f'{NUMBER1} {operator} {NUMBER2}'
 
     return success_answer, question_print
-
-
-def run_game_calc():
-    run_game(game_condition=GAME_CONDITION, game=calc_logic)
