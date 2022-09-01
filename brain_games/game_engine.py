@@ -2,7 +2,7 @@ import prompt
 
 
 def welcome_user(game_condition):
-    print("Welcome to the Brain Games!")
+    print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
     print(game_condition)
@@ -10,7 +10,7 @@ def welcome_user(game_condition):
 
 
 def game_checker(question, success_answer):
-    print(f"Question: {question}")
+    print(f'Question: {question}')
     user_answer = prompt.string('Your answer: ')
 
     if user_answer == success_answer:
@@ -37,7 +37,7 @@ def run_game(game_condition, game):
             print('Correct!')
             count_success_answer += 1
         else:
-            print(f"'{attempt}' is wrong answer ;(. "
-                  f"Correct answer was '{success_answer}'\n"
-                  f"Let's try again, {name}!")
+            print(f'\'{attempt}\' is wrong answer ;(. '
+                  f'Correct answer was \'{success_answer}\'\n'
+                  f'Let\'s try again, {name}!')
             return
