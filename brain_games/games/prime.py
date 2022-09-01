@@ -1,11 +1,15 @@
-from brain_games.game_engine import run_game
 from random import randint
 
 
 GAME_CONDITION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+START = 1
+STOP = 100
 
 
 def is_prime(a):
+    if a < 2:
+        return False
+
     d = 2
     while a % d != 0:
         d += 1
@@ -13,18 +17,13 @@ def is_prime(a):
 
 
 def prime_logic():
-    NUMBER = randint(2, 100)
-    yes_answer, no_answer = 'yes', 'no'
+    NUMBER = randint(START, STOP)
 
     if is_prime(NUMBER):
-        success_answer = yes_answer
+        success_answer = 'yes'
     else:
-        success_answer = no_answer
+        success_answer = 'no'
 
     question_print = str(NUMBER)
 
     return success_answer, question_print
-
-
-def run_game_prime():
-    run_game(game_condition=GAME_CONDITION, game=prime_logic)
