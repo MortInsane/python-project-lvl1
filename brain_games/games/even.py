@@ -1,19 +1,19 @@
 from random import randint
 
 
-GAME_CONDITION = 'Answer "yes" if the number is even, otherwise answer "no".'
+GAME_RULE = 'Answer "yes" if the number is even, otherwise answer "no".'
 START = 1
 STOP = 100
 
 
-def even_logic():
-    NUMBER = randint(START, STOP)
+def game_logic():
+    number = randint(START, STOP)
 
-    if NUMBER % 2 == 0:
-        success_answer = 'yes'
+    if number % 2 == 0:
+        answer = 'yes'
     else:
-        success_answer = 'no'
+        answer = 'no'
 
-    question_print = str(NUMBER)
+    question = str(number)
 
-    return success_answer, question_print
+    return answer, question, GAME_RULE
