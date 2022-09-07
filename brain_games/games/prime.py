@@ -1,7 +1,7 @@
 from random import randint
 
 
-GAME_CONDITION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+GAME_RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 START = 1
 STOP = 100
 
@@ -16,14 +16,14 @@ def is_prime(a):
     return a == d
 
 
-def prime_logic():
-    NUMBER = randint(START, STOP)
+def game_logic():
+    number = randint(START, STOP)
 
-    if is_prime(NUMBER):
-        success_answer = 'yes'
+    if is_prime(number):
+        answer = 'yes'
     else:
-        success_answer = 'no'
+        answer = 'no'
 
-    question_print = str(NUMBER)
+    question = str(number)
 
-    return success_answer, question_print
+    return answer, question, GAME_RULE
