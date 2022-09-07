@@ -1,27 +1,27 @@
 from random import randint, choice
 
 
-GAME_CONDITION = 'What is the result of the expression?'
+GAME_RULE = 'What is the result of the expression?'
 START = 1
 STOP = 100
 OPERATORS = ['+', '-', '*']
 
 
-def calc_logic():
-    NUMBER1 = randint(START, STOP)
-    NUMBER2 = randint(START, STOP)
+def game_logic():
+    number1 = randint(START, STOP)
+    number2 = randint(START, STOP)
 
     operator = choice(OPERATORS)
 
-    success_answer = 0
+    answer = 0
     if operator == '-':
-        success_answer = NUMBER1 - NUMBER2
+        answer = number1 - number2
     elif operator == '+':
-        success_answer = NUMBER1 + NUMBER2
-    else:
-        success_answer = NUMBER1 * NUMBER2
+        answer = number1 + number2
+    elif operator == '*':
+        answer = number1 * number2
 
-    success_answer = str(success_answer)
-    question_print = f'{NUMBER1} {operator} {NUMBER2}'
+    answer = str(answer)
+    question = f'{number1} {operator} {number2}'
 
-    return success_answer, question_print
+    return answer, question, GAME_RULE
