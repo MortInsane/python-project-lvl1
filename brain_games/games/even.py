@@ -16,4 +16,4 @@ def game_logic():
 
     question = str(number)
 
-    return answer, question, GAME_RULE
+    return answer, question
