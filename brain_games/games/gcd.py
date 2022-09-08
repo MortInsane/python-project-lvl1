@@ -15,4 +15,4 @@ def game_logic():
     answer = str(gcd(number1, number2))
     question = f'{number1} {number2}'
 
-    return answer, question, GAME_RULE
+    return answer, question
