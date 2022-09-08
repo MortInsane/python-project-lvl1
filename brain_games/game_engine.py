@@ -7,12 +7,10 @@ def run_game(game):
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
+    print(game.GAME_RULE)
 
     while True:
-        answer, question, game_rule = game()
-
-        if count_success_answer == 0:
-            print(game_rule)
+        answer, question = game.game_logic()
 
         if count_success_answer == 3:
             print(f'Congratulations, {name}!')
