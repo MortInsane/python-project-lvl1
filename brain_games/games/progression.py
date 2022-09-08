@@ -33,4 +33,4 @@ def print_progression():
 def game_logic():
     question, answer = print_progression()
 
-    return answer, question, GAME_RULE
+    return answer, question
