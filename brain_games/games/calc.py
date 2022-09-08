@@ -24,4 +24,4 @@ def game_logic():
     answer = str(answer)
     question = f'{number1} {operator} {number2}'
 
-    return answer, question, GAME_RULE
+    return answer, question
