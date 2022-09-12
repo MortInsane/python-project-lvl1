@@ -16,7 +16,7 @@ def is_prime(a):
     return a == d
 
 
-def game_logic():
+def launch_game():
     number = randint(START, STOP)
 
     if is_prime(number):
