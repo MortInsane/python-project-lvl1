@@ -5,32 +5,26 @@ GAME_RULE = 'What number is missing in the progression?'
 OFFSETS = [2, 3, 4, 5]
 START_RANGE = 1
 STOP_RANGE = 100
-NUMBER = 10
+LENGHT_PROGRESSION = 10
 
 
-def print_progression():
+def launch_game():
     offset = choice(OFFSETS)
     start = randint(START_RANGE, STOP_RANGE)
-    end = start + (NUMBER * offset)
+    end = start + (LENGHT_PROGRESSION * offset)
 
-    progression = ''
-    replaced_index = choice(range(NUMBER))
-    replaced_num = 0
+    question = ''
+    replaced_index = choice(range(LENGHT_PROGRESSION))
+    answer = 0
 
     for index, num in enumerate(range(start, end, offset)):
         if index == replaced_index:
-            progression += '.. '
-            replaced_num = num
+            question += '.. '
+            answer = num
         else:
-            progression += f'{str(num)} '
+            question += f'{str(num)} '
 
-    progression = progression.strip()
-    replaced_num = str(replaced_num)
-
-    return progression, replaced_num
-
-
-def game_logic():
-    question, answer = print_progression()
+    question = question.strip()
+    answer = str(answer)
 
     return answer, question
