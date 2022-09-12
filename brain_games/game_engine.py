@@ -1,7 +1,10 @@
 import prompt
 
 
-def run_game(game):
+ROUND_COUNT = 3
+
+
+def launch_engine(game):
     count_success_answer = 0
 
     print('Welcome to the Brain Games!')
@@ -10,20 +13,20 @@ def run_game(game):
     print(game.GAME_RULE)
 
     while True:
-        answer, question = game.game_logic()
+        answer, question = game.launch_game()
 
-        if count_success_answer == 3:
+        if count_success_answer == ROUND_COUNT:
             print(f'Congratulations, {name}!')
             return
 
         print(f'Question: {question}')
-        attempt = prompt.string('Your answer: ')
+        user_answer = prompt.string('Your answer: ')
 
-        if attempt == answer:
+        if user_answer == answer:
             print('Correct!')
             count_success_answer += 1
         else:
-            print(f'\'{attempt}\' is wrong answer ;(. '
+            print(f'\'{user_answer}\' is wrong answer ;(. '
                   f'Correct answer was \'{answer}\'\n'
                   f'Let\'s try again, {name}!')
             return
