@@ -7,7 +7,7 @@ STOP = 100
 OPERATORS = ['+', '-', '*']
 
 
-def game_logic():
+def launch_game():
     number1 = randint(START, STOP)
     number2 = randint(START, STOP)
 
