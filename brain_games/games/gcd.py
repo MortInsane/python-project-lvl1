@@ -7,7 +7,7 @@ START = 1
 STOP = 100
 
 
-def game_logic():
+def launch_game():
 
     number1 = randint(START, STOP)
     number2 = randint(START, STOP)
