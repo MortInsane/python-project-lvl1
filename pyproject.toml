@@ -6,6 +6,9 @@ authors = ["Mort Insane <mort.insane@gmail.com>"]
 packages = [
     {include = "brain_games"},
 ]
+classifiers = [
+    "Topic :: Games/Entertainment"
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
