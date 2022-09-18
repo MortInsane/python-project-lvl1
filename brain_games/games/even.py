@@ -2,12 +2,12 @@ from random import randint
 
 
 GAME_RULE = 'Answer "yes" if the number is even, otherwise answer "no".'
-START = 1
-STOP = 100
+START_RANGE = 1
+STOP_RANGE = 100
 
 
-def launch_game():
-    number = randint(START, STOP)
+def generate_round():
+    number = randint(START_RANGE, STOP_RANGE)
 
     if number % 2 == 0:
         answer = 'yes'
