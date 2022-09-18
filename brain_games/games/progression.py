@@ -14,20 +14,15 @@ def generate_round():
     start_progression = randint(START_RANGE, STOP_RANGE)
     end_progression = start_progression + LENGHT_PROGRESSION * step_progression
 
-    question = ''
+    question = []
+
+    for num in range(start_progression, end_progression, step_progression):
+        question.append(str(num))
+
     replaced_index = randint(START_RANGE - 1, LENGHT_PROGRESSION - 1)
-    answer = 0
+    answer = str(question[replaced_index])
+    question[replaced_index] = '..'
 
-    for index, num in enumerate(range(start_progression,
-                                      end_progression,
-                                      step_progression)):
-        if index == replaced_index:
-            question += '.. '
-            answer = num
-        else:
-            question += f'{str(num)} '
-
-    question = question.strip()
-    answer = str(answer)
+    question = ' '.join(question)
 
     return answer, question
