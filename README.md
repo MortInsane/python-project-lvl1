@@ -18,4 +18,4 @@ brain-progression - "What number is missing in the progression?"
 brain-prime - "Answer yes if given number is prime. Otherwise answer no."
 ```
 ### Gameplay
-[👉🏻 PUSH ME 👈🏻](https://asciinema.org/a/N2y9qK40H9hFsFPkXLqPw4DAw)
+[![asciicast](https://asciinema.org/a/N2y9qK40H9hFsFPkXLqPw4DAw.svg)](https://asciinema.org/a/N2y9qK40H9hFsFPkXLqPw4DAw)
