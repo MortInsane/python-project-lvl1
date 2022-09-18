@@ -2,14 +2,14 @@ from random import randint, choice
 
 
 GAME_RULE = 'What is the result of the expression?'
-START = 1
-STOP = 100
+START_RANGE = 1
+STOP_RANGE = 100
 OPERATORS = ['+', '-', '*']
 
 
-def launch_game():
-    number1 = randint(START, STOP)
-    number2 = randint(START, STOP)
+def generate_round():
+    number1 = randint(START_RANGE, STOP_RANGE)
+    number2 = randint(START_RANGE, STOP_RANGE)
 
     operator = choice(OPERATORS)
 
