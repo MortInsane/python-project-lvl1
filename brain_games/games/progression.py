@@ -19,7 +19,7 @@ def generate_round():
     for num in range(start_progression, end_progression, step_progression):
         question.append(str(num))
 
-    replaced_index = randint(START_RANGE - 1, LENGHT_PROGRESSION - 1)
+    replaced_index = randint(0, LENGHT_PROGRESSION - 1)
     answer = str(question[replaced_index])
     question[replaced_index] = '..'
 
