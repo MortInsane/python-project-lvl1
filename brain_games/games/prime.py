@@ -2,22 +2,22 @@ from random import randint
 
 
 GAME_RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
-START = 1
-STOP = 100
+START_RANGE = 1
+STOP_RANGE = 100
 
 
-def is_prime(a):
-    if a < 2:
+def is_prime(number):
+    if number < 2:
         return False
 
-    d = 2
-    while a % d != 0:
-        d += 1
-    return a == d
+    divisor = 2
+    while number % divisor != 0:
+        divisor += 1
+    return number == divisor
 
 
-def launch_game():
-    number = randint(START, STOP)
+def generate_round():
+    number = randint(START_RANGE, STOP_RANGE)
 
     if is_prime(number):
         answer = 'yes'
