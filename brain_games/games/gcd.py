@@ -3,14 +3,13 @@ from math import gcd
 
 
 GAME_RULE = 'Find the greatest common divisor of given numbers.'
-START = 1
-STOP = 100
+START_RANGE = 1
+STOP_RANGE = 100
 
 
-def launch_game():
-
-    number1 = randint(START, STOP)
-    number2 = randint(START, STOP)
+def generate_round():
+    number1 = randint(START_RANGE, STOP_RANGE)
+    number2 = randint(START_RANGE, STOP_RANGE)
 
     answer = str(gcd(number1, number2))
     question = f'{number1} {number2}'
