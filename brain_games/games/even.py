@@ -7,20 +7,20 @@ STOP_RANGE = 100
 
 
 def is_even(num):
-    answer = ''
-
     if num % 2 == 0:
-        answer = 'yes'
-    else:
-        answer = 'no'
+        return True
 
-    return answer
+    return False
 
 
 def generate_round():
     number = randint(START_RANGE, STOP_RANGE)
 
-    answer = is_even(number)
+    if is_even(number):
+        answer = 'yes'
+    else:
+        answer = 'no'
+
     question = str(number)
 
     return answer, question
