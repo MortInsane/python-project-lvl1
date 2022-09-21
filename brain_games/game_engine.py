@@ -5,8 +5,6 @@ ROUNDS_COUNT = 3
 
 
 def launch_game(game):
-    success_answers_count = 0
-
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
@@ -21,7 +19,6 @@ def launch_game(game):
 
         if user_answer == answer:
             print('Correct!')
-            success_answers_count += 1
             round += 1
         else:
             print(f'\'{user_answer}\' is wrong answer ;(. '
