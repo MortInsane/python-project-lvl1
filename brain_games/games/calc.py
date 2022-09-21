@@ -9,6 +9,7 @@ OPERATORS = ['+', '-', '*']
 
 def get_expression(num1, num2, operator):
     answer = 0
+
     if operator == '-':
         answer = num1 - num2
     elif operator == '+':
