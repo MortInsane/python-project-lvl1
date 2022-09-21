@@ -7,7 +7,7 @@ STOP_RANGE = 100
 OPERATORS = ['+', '-', '*']
 
 
-def get_expression(num1, num2, operator):
+def eval_expression(num1, num2, operator):
     answer = 0
 
     if operator == '-':
@@ -25,7 +25,7 @@ def generate_round():
     number2 = randint(START_RANGE, STOP_RANGE)
     operator = choice(OPERATORS)
 
-    answer = get_expression(number1, number2, operator)
+    answer = eval_expression(number1, number2, operator)
     question = f'{number1} {operator} {number2}'
 
     return answer, question
