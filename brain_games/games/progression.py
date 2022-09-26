@@ -9,17 +9,13 @@ STOP_RANGE = 100
 LENGHT = 10
 
 
-def generate_progression(start, end, step, replaced_index):
+def generate_progression(start, end, step):
     progression = []
 
     for num in range(start, end, step):
         progression.append(str(num))
 
-    answer = str(progression[replaced_index])
-    progression[replaced_index] = '..'
-    progression = ' '.join(progression)
-
-    return answer, progression
+    return progression
 
 
 def generate_round():
@@ -28,9 +24,12 @@ def generate_round():
     end_progression = start_progression + LENGHT * step_progression
     replaced_index = randint(0, LENGHT - 1)
 
-    answer, question = generate_progression(start_progression,
-                                            end_progression,
-                                            step_progression,
-                                            replaced_index)
+    progression = generate_progression(start_progression,
+                                       end_progression,
+                                       step_progression)
+
+    answer = progression[replaced_index]
+    progression[replaced_index] = '..'
+    question = ' '.join(progression)
 
     return answer, question
